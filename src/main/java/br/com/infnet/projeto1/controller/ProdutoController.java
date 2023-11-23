@@ -24,6 +24,7 @@ public class ProdutoController {
     @GetMapping("/{id}")
     public Produto getById(@PathVariable  int id){
         LOGGER.info("Get by id: " + id);
+        produtoUtil.getLast();
         return produtoUtil.getById(id);
 
     }

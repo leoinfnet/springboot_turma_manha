@@ -1,6 +1,7 @@
 package br.com.infnet.projeto1.util;
 
 import br.com.infnet.projeto1.model.Produto;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -10,6 +11,8 @@ import java.util.Map;
 
 @Service
 public class ProdutoUtil {
+    @Autowired
+    CurrencyUtil currencyUtil;
     Map<Integer,Produto> produtos = getProdutos();
     private int lastId = 3;
     private Map<Integer, Produto> getProdutos(){
@@ -32,6 +35,9 @@ public class ProdutoUtil {
     }
     public void delete(int id) {
         produtos.remove(id);
+    }
+    public void getLast(){
+        currencyUtil.getCotacao();
     }
 
     public Produto getById(int id) {
