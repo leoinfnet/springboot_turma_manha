@@ -9,7 +9,7 @@ import java.util.List;
 
 @Data
 @AllArgsConstructor @NoArgsConstructor
-public class Payload {
+public class ResponsePayload {
     List<String> nomes;
     LocalDateTime dataHora;
 }
